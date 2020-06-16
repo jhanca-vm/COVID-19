@@ -1,5 +1,30 @@
 <script>
+	import { onMount } from 'svelte';
+
 	export let segment;
+
+	onMount(() => {
+		document.addEventListener('click', e => {
+			let hidden = document.querySelector('nav').classList.contains('hidden');
+			let click = e.target;
+			let btnSwitch = document.getElementById('downUp');
+
+			if (hidden == false && click != btnSwitch) {
+				document.querySelector('nav').classList.add('hidden')
+			}
+		}, false);
+	});
+
+	function showHideMenu() {
+		let hidden = document.querySelector('nav').classList.contains('hidden');
+		let menu = document.querySelector('nav');
+		
+		if (hidden == true) {
+			menu.classList.remove('hidden');
+		} else {
+			menu.classList.add('hidden');
+		}
+	};
 </script>
 
 <style>
@@ -23,7 +48,13 @@
 	}
 
 	@media screen and (min-width: 640px) {
-		#down {
+		#downUp {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+		[aria-current]::after {
 			display: none;
 		}
 	}
@@ -36,9 +67,9 @@
 				<img class="h-8" src="coronavirus.svg" alt="logo">
 				<h1 class="ml-2 text-xl font-bold">COVID-19</h1>
 			</a>
-			<i id="down" class="ml-2 text-lg fas fa-chevron-down"></i>
+			<i id="downUp" on:click={showHideMenu} class="ml-2 text-lg fas fa-chevron-down"></i>
 		</div>
-		<nav class="mt-2 hidden sm:block sm:mt-0">
+		<nav class="mt-3 hidden sm:block sm:m-0 shadow-inner sm:shadow-none -mb-3 py-1">
 			<ul class="flex justify-between">
 				<li class="sm:mr-8 md:mr-12">
 					<a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">Países</a>

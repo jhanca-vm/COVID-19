@@ -13,6 +13,7 @@ module.exports = {
   plugins: [
     tailwindcss("./tailwind.js"),
 
-    ...(process.env.NODE_ENV === "production" ? [purgecss] [nanocss] : [])
+    ...(process.env.NODE_ENV === "production" ? [purgecss] : []),
+    ...(process.env.NODE_ENV === "production" ? [nanocss] : [])
   ]
 };
