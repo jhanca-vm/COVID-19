@@ -21,6 +21,6 @@
 </style>
 
 <Header {segment}/>
-<main class="px-4 py-6 sm:px-4 md:px-6 lg:px-8 lg:pt-8">
+<main class="px-4 my-5 sm:px-4 md:px-6 lg:px-8 lg:pt-8">
 	<slot></slot>
 </main>
