@@ -13,4 +13,4 @@
 	export let countries;
 </script>
 
-<CountriesTable index="en" {countries}/>
+<CountriesTable index="es" {countries}/>

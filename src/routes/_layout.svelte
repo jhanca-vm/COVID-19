@@ -7,7 +7,8 @@
 <style>
 	:global(body) {
 		font-family: 'Lato', sans-serif;
-		color: #2d3748;
+		color: #e6fffa;
+		background-color: #285e61;
 	}
 
 	@keyframes -global-rotate {
@@ -21,6 +22,6 @@
 </style>
 
 <Header {segment}/>
-<main class="px-4 my-5 sm:px-4 md:px-6 lg:px-8 lg:pt-8">
+<main class="px-4 my-5 sm:px-4 md:px-6 lg:px-8 lg:py-6">
 	<slot></slot>
 </main>

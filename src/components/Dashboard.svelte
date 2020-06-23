@@ -53,13 +53,13 @@
   }
 </style>
 
-<section class="container mx-auto text-center">
+<section class="container mx-auto text-center border-teal-100">
   {#await getData()}
     <i class="text-7xl text-red-400 mt-56 lg:mt-48 fas fa-virus"></i>
   {:then data}  
     <div class="text-gray-100 text-5xl">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="bg-red-500 p-6 rounded-lg shadow-inner">
+        <article class="bg-red-500 p-6 rounded-lg shadow-inner border-2 bg-opacity-75">
           <div class="border-b pb-5">
             <i class="fas fa-viruses"></i>
             <h2 class="font-bold">{numberFormat.format(data.cases)}</h2>
@@ -67,7 +67,7 @@
           </div>
           <p class="text-lg mt-5"><i>{language.today}: +{numberFormat.format(data.todayCases)}</i></p>
         </article>
-        <article class="bg-teal-500 p-6 rounded-lg shadow-inner">
+        <article class="bg-blue-500 p-6 rounded-lg shadow-inner border-2 bg-opacity-75">
           <div class="border-b pb-5">
             <i class="fas fa-stethoscope"></i>
             <h2 class="font-bold">{numberFormat.format(data.recovered)}</h2>
@@ -75,7 +75,7 @@
           </div>
           <p class="text-lg mt-5"><i>{language.today}: +{numberFormat.format(data.todayRecovered)}</i></p>
         </article>
-        <article class="bg-gray-500 p-6 rounded-lg shadow-inner">
+        <article class="bg-purple-400 p-6 rounded-lg shadow-inner border-2 bg-opacity-50">
           <div class="border-b pb-5">
             <i class="fas fa-skull-crossbones"></i>
             <h2 class="font-bold">{numberFormat.format(data.deaths)}</h2>
@@ -85,7 +85,9 @@
         </article>
       </div>
     </div>
-    <div class="grid mt-8 px-6 divide-y md:grid-cols-4 md:py-6 md:px-0 md:divide-y-0 md:divide-x sm:mt-10 shadow-inner rounded-lg bg-gray-100">
+    <div
+      class="grid mt-8 px-6 divide-y md:grid-cols-4 md:py-6 md:px-0 md:divide-y-0 md:divide-x sm:mt-10 shadow-inner border rounded-lg bg-teal-700"
+    >
       <div class="column py-6 md:py-0 md:px-6 md:divide-y">
         <div class="md:mb-6">
           <i class="fas fa-globe-americas"></i>

@@ -45,22 +45,25 @@
 	};
 </script>
 
-<header class="py-3 px-4 md:px-6 lg:px-8 shadow bg-gray-100">
+<header class="py-3 px-4 md:px-6 lg:px-8 shadow-md bg-teal-700">
 	<div class="container mx-auto flex justify-between items-center">
 		<div class="flex items-center justify-between">
 			<a id="logo" class="flex items-center justify-center" href={language.home}>
-				<img class="h-8" src="coronavirus.svg" alt="logo">
+				<i class="text-2xl text-teal-100 fas fa-virus"></i>
 				<h1 class="ml-2 text-xl font-bold">COVID-19</h1>
 			</a>
 		</div>
-		<nav class="relative">
+		<nav class="relative font-bold">
 			<ul class="flex">
 				<li class="mr-8 sm:mr-12 md:mr-16">
 					<a href={language.linkCountries}>{language.countries}</a>
 				</li>
 				<li>
 					<p on:click={showHide} id="button" class="cursor-pointer">{language.index} <i class="fas fa-sort-down"></i></p>
-					<ul id="languages" class="hidden absolute bg-gray-100 px-5 py-3 mt-4 rounded-b-lg shadow-md right-0 z-40">
+					<ul
+						id="languages"
+						class="hidden absolute bg-teal-700 px-5 py-3 mt-4 rounded-b-lg shadow-md right-0 border-t border-teal-800"
+					>
 						<li class="mb-2">
 							<a class="hover:underline" href="/">Español</a>
 						</li>
